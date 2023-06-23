@@ -12,3 +12,5 @@
 8) Methods, Interfances, and Objects
 9) Concurrency
 10) Data I/O Go
+11) Network Services in Go
+12) Testing Programs
