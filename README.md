@@ -1,5 +1,6 @@
 # GoLang Programming  Exercises 
 * > Author : Elia Renzoni
+  > Reference Book : Learning Go Programming, Packt Publishing
 
 ### Chapters > 
 1) First Step in GO
