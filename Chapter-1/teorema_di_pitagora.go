@@ -5,13 +5,13 @@ import "fmt"
 const (
 	primoNumero int = 12
 	secondoNumero int = 8
-	mulOperando int8 = 2
+	mulOperando int = 2
 )
 
 
 func main() {
-	var lato1, lato2 int64
-	var ipotenusa int64
+	var lato1, lato2 int
+	var ipotenusa int
 
 	lato1 = (primoNumero * primoNumero) - (secondoNumero * secondoNumero)
 	lato2 = mulOperando * primoNumero * secondoNumero
