@@ -9,7 +9,7 @@ const (
 
 func main() {
 	var fahrenheit int = 23
-	celsius := conv1 * (float32(fahrenheit) - float32(conv2)) 
+	celsius := conv1 * (float32(fahrenheit) - float32(conv2)) // short declaration
 
 	fmt.Printf("Gradi Celsius = %f", celsius)
 }
