@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-const (
-	_primoValore = 2.0 * iota
+const ( // enum
+	_primoValore = 2.0 * iota // blank identifier
 	secondoValore
 	terzoValore
 )
