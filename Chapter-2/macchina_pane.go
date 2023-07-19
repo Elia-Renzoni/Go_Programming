@@ -24,8 +24,7 @@ func main() {
 func impostaPassi(pane string, dimPane string, tipoCottura string) {
 	if pane == paneBianco {
 		cuociPaneBianco(dimPane, tipoCottura)
-	}
-	else {
+	} else {
 		cuociPaneDolce(dimPane, tipoCottura)
 	}
 }
@@ -33,8 +32,7 @@ func impostaPassi(pane string, dimPane string, tipoCottura string) {
 func cuociPaneBianco(dimPane string, tipoCottura string) {
 	if dimPane == grandezzaNormale {
 		stampaProcessoNormaleB(tipoCottura)
-	}
-	else {
+	} else {
 		stampaProcessoDoppioB(tipoCottura)
 	}
 }
@@ -43,8 +41,7 @@ func cuociPaneBianco(dimPane string, tipoCottura string) {
 func cuociPaneDolce(dimPane string, tipoCottura string) {
 	if dimPane == grandezzaNormale {
 		stampaProcessoNormaleD(tipoCottura)
-	}
-	else {
+	} else {
 		stampaProcessoDoppioD(tipoCottura)
 	}
 }
@@ -55,8 +52,7 @@ func stampaProcessoNormaleB(tipoCottura string) {
 			           lievitazioneSecPaneB +  modellazionePagnottaPaneB + lievitazioneFinalePaneB + 
 			           cotturaPaneB + raffreddamentoPaneB
 		fmt.Println("Tempo totale di cottura : %d", tempoTotale)
-	}
-	else {
+	} else {
 		tempoTotale := impastoPrimPaneB + lievitazionePrimPaneB + impastoSecoPaneB + 
 			           lievitazioneSecPaneB +  modellazionePagnottaPaneB
 		fmt.Printf("Tempo Totale di Cottura : %d", tempoTotale)
@@ -70,8 +66,7 @@ func stampaProcessoDoppioB(tipoCottura string) {
 			           lievitazioneSecPaneB +  modellazionePagnottaPaneB + lievitazioneFinalePaneB + 
 			           tempoCotturaRadd + raffreddamentoPaneB
 		fmt.Println("Tempo totale di cottura : %d", tempoTotale)
-	}
-	else {
+	} else {
 		tempoTotale := impastoPrimPaneB + lievitazionePrimPaneB + impastoSecoPaneB + 
 			           lievitazioneSecPaneB +  modellazionePagnottaPaneB
 		fmt.Printf("Tempo Totale di Cottura : %d", tempoTotale)
@@ -84,8 +79,7 @@ func stampaProcessoNormaleD(tipoCottura string) {
 			           lievitazioneSecPaneD +  modellazionePagnottaPaneD + lievitazioneFinalePaneD + 
 			           cotturaPaneD + raffreddamentoPaneD
 		fmt.Printf("Tempo di cottura totale : %d", tempoTotale)
-	}
-	else {
+	} else {
 		tempoTotale := impastoPrimPaneD + lievitazionePrimPaneD + impastoSecoPaneD + 
 			           lievitazioneSecPaneD +  modellazionePagnottaPaneD
 		fmt.Printf("Tempo Totale di Cottura : %d", tempoTotale)
@@ -99,8 +93,7 @@ func stampaProcessoDoppioD(tipoCottura string) {
 			           lievitazioneSecPaneD +  modellazionePagnottaPaneD + lievitazioneFinalePaneD + 
 			           tempoCotturaRadd + raffreddamentoPaneD
 		fmt.Printf("Tempo di cottura totale : %d", tempoTotale)
-	}
-	else {
+	} else {
 		tempoTotale := impastoPrimPaneD + lievitazionePrimPaneD + impastoSecoPaneD + 
 			           lievitazioneSecPaneD +  modellazionePagnottaPaneD
 		fmt.Printf("Tempo Totale di Cottura : %d", tempoTotale)
