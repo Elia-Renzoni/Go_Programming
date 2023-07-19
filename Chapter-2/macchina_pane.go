@@ -61,7 +61,7 @@ func stampaProcessoNormaleB(tipoCottura string) {
 
 func stampaProcessoDoppioB(tipoCottura string) {
 	if tipoCottura == cotturaMacchina {
-		tempoCotturaRadd := cotturaPaneB * 0.50
+		tempoCotturaRadd := (cotturaPaneB * 100) / 50
 		tempoTotale := impastoPrimPaneB + lievitazionePrimPaneB + impastoSecoPaneB + 
 			           lievitazioneSecPaneB +  modellazionePagnottaPaneB + lievitazioneFinalePaneB + 
 			           tempoCotturaRadd + raffreddamentoPaneB
@@ -88,7 +88,7 @@ func stampaProcessoNormaleD(tipoCottura string) {
 
 func stampaProcessoDoppioD(tipoCottura string) {
 	if tipoCottura == cotturaMacchina {
-		tempoCotturaRadd := cotturaPaneD * 0.50
+		tempoCotturaRadd := (cotturaPaneD * 100) / 50
 		tempoTotale := impastoPrimPaneD + lievitazionePrimPaneD + impastoSecoPaneD + 
 			           lievitazioneSecPaneD +  modellazionePagnottaPaneD + lievitazioneFinalePaneD + 
 			           tempoCotturaRadd + raffreddamentoPaneD
