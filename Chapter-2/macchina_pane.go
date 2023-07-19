@@ -12,8 +12,8 @@ const (
 	cotturaPaneB, cotturaPaneD int32 = 45, 35
 	raffreddamentoPaneB, raffreddamentoPaneD int32 = 30, 30
 	paneBianco, paneDolce string = "B", "D"
-	grandezzaNormale, grandezzaDoppia string "N", "D"
-	cotturaManuale, cotturaMacchina string "M", "N" 
+	grandezzaNormale, grandezzaDoppia string = "N", "D"
+	cotturaManuale, cotturaMacchina string = "M", "N" 
 )
 
 func main() {
