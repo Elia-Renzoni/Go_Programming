@@ -4,8 +4,8 @@ import "fmt"
 
 const (
 	impastoPrimPaneB, impastoPrimPaneD int32 = 15, 20
-	lievitazionePrimPaneB, lievitaionePrimPaneD int32 = 60, 60
-	impastoSecoPaneB, impastoSecPaneD int32 = 20, 30
+	lievitazionePrimPaneB, lievitazionePrimPaneD int32 = 60, 60
+	impastoSecoPaneB, impastoSecoPaneD int32 = 20, 30
 	lievitazioneSecPaneB, lievitazioneSecPaneD int32 = 20, 30
 	modellazionePagnottaPaneB, modellazionePagnottaPaneD int32 = 2, 2
 	lievitazioneFinalePaneB, lievitazioneFinalePaneD int32 = 75, 75
