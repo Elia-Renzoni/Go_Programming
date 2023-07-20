@@ -15,9 +15,7 @@ func verificaSostanza(eboSostanza int) {
 	switch eboSostanza {
 	case acqua:
 		fmt.Printf("Acqua")
-	case mercurio:
-		fallthrough
-	case mercurio1:
+	case mercurio, mercurio1:		// logical or operator 
 		fmt.Printf("mercurio")
 	case rame:
 		fmt.Printf("Rame")
