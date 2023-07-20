@@ -11,7 +11,7 @@ func main() {
 	verificaSostanza(eboSostanza)
 }
 
-func eboSostanza(eboSostanza int16) {
+func verificaSostanza(eboSostanza int16) {
 	switch eboSostanza {
 	case acqua:
 		fmt.Printf("Acqua")
