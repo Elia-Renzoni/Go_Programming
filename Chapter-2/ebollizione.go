@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 const (
-	acqua, mercurio, mercurio1, rame, argento, oro int16 = 100, 350, 357, 1187, 2193, 2660
+	acqua, mercurio, mercurio1, rame, argento, oro int = 100, 350, 357, 1187, 2193, 2660
 )
 
 func main() {
@@ -11,7 +11,7 @@ func main() {
 	verificaSostanza(eboSostanza)
 }
 
-func verificaSostanza(eboSostanza int16) {
+func verificaSostanza(eboSostanza int) {
 	switch eboSostanza {
 	case acqua:
 		fmt.Printf("Acqua")
