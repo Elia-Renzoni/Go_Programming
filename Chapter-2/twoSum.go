@@ -5,7 +5,7 @@ import "fmt"
 const notFound = -1
 
 func main() {
-	var arrElements [6]int16 = [6]int16{12, 44, 3, 6, 8, 7}
+	var arrElements [5]int16 = [5]int16{12, 44, 3, 6, 8, 7}
 	var target int16 = 34
 	var firstIndex, secondIndex int = controlSum(arrElements, target)
 	var result bool = setOutput(firstIndex, secondIndex) 
@@ -16,7 +16,7 @@ func main() {
 	}
 }
 
-func controlSum(array [6]int16, target int16) int {
+func controlSum(array [5]int16, target int16) (int, int) {
 	var firstIndex, secondIndex int
 	for index := range array {
 		if sum := array[index] + array[index + 1]; sum == target {
