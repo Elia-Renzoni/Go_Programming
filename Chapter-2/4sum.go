@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-const maxIter = 5
+const maxIter = 4
 
 func main() {
 	var numbers []int = []int {12, 45, 6, 11, 8, 34, 5, 32, 7, 55}
