@@ -22,8 +22,8 @@ func checkMult(isMult* bool, numberList []int) {
 	for index := range numberList {
 		switch {
 		case numberList[index] % multiply1 == 0, 
-			 numberList[index] % multiply2 == 0,
-			 numberList[index] % multiplt3 == 0:
+		     numberList[index] % multiply2 == 0,
+		     numberList[index] % multiplt3 == 0:
 			 *isMult = true
 		default:
 			 *isMult = false
