@@ -12,7 +12,7 @@ func main() {
 	var targetDiv int = 5
 	var nSubArray int8 = notDiv
 	checkMakeSumDivbyP(arrNumbs, targetDiv, &nSubArray)
-	if *nSubArray != notDiv {
+	if nSubArray != notDiv {
 		fmt.Println("Divisibile !")
 	} else {
 		fmt.Println("Non divisibile !")
@@ -26,7 +26,7 @@ func checkMakeSumDivbyP(array []int, div int, isDiv* int8) {
 		if sum % div == 0 {
 			*isDiv += 1
 		} else {
-			array[index] = notDiv
+			array[index] = -1
 			if *isDiv > notDiv {
 				*isDiv -= 1 
 			}
