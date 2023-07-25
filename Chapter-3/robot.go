@@ -25,15 +25,15 @@ func main() {
 func checkRobotMovement(movementArr []int16, movementRules string, sum* int16, afterSecond int16) {
   firstRobotIndex := 0
   secondRobotIndex := len(movementArr)
-  for indexValue := range movementPath {
-    if movementPath[indexValue] == command1 {
+  for indexValue := range movementRules {
+    if movementRules[indexValue] == command1 {
       firstRobotIndex++
       val1 := movementArr[firstRobotIndex]
     } else {
       firstRobotIndex--
       val1 := movementArr[firstRobotIndex]
     }
-    if movementPath[indexValue + 1] == command1	{
+    if movementRules[indexValue + 1] == command1	{
       secondRobotIndex++
       val2 := movementArr[secondRobotIndex]
     } else {
