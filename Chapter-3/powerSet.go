@@ -26,10 +26,20 @@ func main() {
 
 func setPowerSet(subSetNumbers* int, inputSet []int) []int {
   var powerSet []int
+  var j int
   if *subSetNumbers = math.Pow(2, len(inputSet)); *subSetNumbers != 0 {
       subSetCounter := 1
-      for i, j := 0; j < subSetCounter && subSetCounter <= *subSetNumbers && j < len(inputSet) - 1; j++, subSetCounter += 1, i += 1 {
-           powerSet[i] = inputSet[j]
+      for i := 0; i < subSetCounter && subSetCounter < *subSetNumbers; i++ {
+        if i < len(inputSet) {
+          for j < len(inputSet) {
+            powerSet[j] = inputSet[i]
+            j += 1
+          }
+          i = 0
+          subSetCounter += 1
+        } else {
+          return powerSet
+        }
       }
   } else {
     return powerSet
