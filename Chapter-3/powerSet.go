@@ -27,7 +27,7 @@ func main() {
 func setPowerSet(subSetNumbers* int, inputSet []int) []int {
   var powerSet []int
   var j int
-  if *subSetNumbers = math.Pow(2, len(inputSet)); *subSetNumbers != 0 {
+  if *subSetNumbers = int(math.Pow(2, (float64(len(inputSet)))); *subSetNumbers != 0 {
       subSetCounter := 1
       for i := 0; i < subSetCounter && subSetCounter < *subSetNumbers; i++ {
         if i < len(inputSet) {
