@@ -1,0 +1,95 @@
+/**
+ * 
+ * 	@author Elia Renzoni
+ * 	@date 28/07/2023
+ * 	@brief Levy, Marshall Hall and Mersenne Conjecture
+ * */
+
+ package main
+
+ import (
+ 	"fmt"
+ 	"math"
+ )
+
+ const (
+ 	levyConj = iota
+ 	marshallHallConj
+ 	mersenneConj
+ )
+ const maxPrimeNumb = 1000
+
+ func main() {
+ 	var (
+ 		levyInput int16 = 13
+ 		marshallHallInput1, marshallHallInput2 int16 = -6, 12
+ 		mersenneInput int16 = 19
+ 		conjSelected byte = marshallHallConj 
+ 	)
+ 	switch conjSelected {
+ 	case levyConj:
+ 		if resultLevyConj := verLevyConjcture(levyInput); resultLevyConj {
+ 			fmt.Printf("Verified")
+ 		} else {
+ 			fmt.Printf("Not verified")
+ 		}
+ 	case marshallHallConj:
+ 		if resultMarshhallConj := verMarshallHallConjecture(marshallHallInput1, marshallHallInput2); resultMarshhallConj {
+ 			fmt.Printf("Verfied")
+ 		} else {
+ 			fmt.Printf("Not Verified")
+ 		}
+ 	case mersenneConj:
+ 		if resultMersenneConj := verMersenneConjecture(mersenneInput); resultMersenneConj {
+ 			fmt.Printf("Verified")
+ 		} else {
+ 			fmt.Printf("Not Verified")
+ 		}
+ 	}
+ }
+
+func checkPrimeNumbers(number int16) bool {
+	isPrime = true 
+	for index := 2; index < number && isPrime != false; index++ {
+		if index % number == 0 {
+			isPrime = false
+		}
+	}
+	return isPrime
+}
+
+
+
+ func verLevyConjcture(levyNumbInput int16) bool {
+    isVer := false
+ 	for firstNumber := 0; firstNumber < maxPrimeNumb; firstNumber++ {
+ 		if firstNumber % 2 != 0 && checkPrimeNumbers(firstNumber) {
+ 			for secondNumber := 0; secondNumber < maxPrimeNumb; secondNumber++ {
+ 				if checkPrimeNumbers(secondNumber) {
+ 					if levyNumbInput == (firstNumber + secondNumber * secondNumber) {
+                        isVer = true
+                    }
+ 				}
+ 			}
+ 		}
+ 	}
+    return isVer
+ }
+
+ func verMarshallHallConjecture(firstNumb, secondNumb int16) bool {
+    cube := Pow(float64(firstNumber), 3)
+    quad := Pow(float64(secondNumber), 2)
+    isVer := false
+    if cube != quad {
+        isVer = true
+    }
+    return isVer
+ }
+
+ func verMersenneConjecture(mersenneIn int16) bool {
+    isVer := false
+    if checkPrimeNumbers(mersenneIn) {
+        isVer = true
+    }
+    return isVer
+ }
