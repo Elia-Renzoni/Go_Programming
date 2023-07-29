@@ -56,6 +56,8 @@ func checkPrimeNumbers(number int) bool {
 	return isPrime
 }
 
+
+
  func verLevyConjcture(levyNumbInput int) bool {
     isVer := false
  	for firstNumber := 0; firstNumber < maxPrimeNumb; firstNumber++ {
@@ -73,8 +75,8 @@ func checkPrimeNumbers(number int) bool {
  }
 
  func verMarshallHallConjecture(firstNumb, secondNumb int) bool {
-    cube := Pow(float64(firstNumb), 3)
-    quad := Pow(float64(secondNumb), 2)
+    cube := math.Pow(float64(firstNumb), 3)
+    quad := math.Pow(float64(secondNumb), 2)
     isVer := false
     if cube != quad {
         isVer = true
