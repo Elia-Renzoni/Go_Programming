@@ -56,8 +56,6 @@ func checkPrimeNumbers(number int) bool {
 	return isPrime
 }
 
-
-
  func verLevyConjcture(levyNumbInput int) bool {
     isVer := false
  	for firstNumber := 0; firstNumber < maxPrimeNumb; firstNumber++ {
