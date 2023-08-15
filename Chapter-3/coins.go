@@ -9,7 +9,7 @@ package main
 import "fmt"
 
 const (
-	incrementOrd int = 4
+	incrementOrd, incrementOrd2 int = 4, 2
 	basicInt         = 1
 	elements         = 5
 )
@@ -50,7 +50,7 @@ func makeIntegers(array []int) int {
 			indexDx = index + 1
 			for j := indexSx; j < indexDx; j++ {
 				if array[j] != array[j + 1] {
-					nIntegers += 2
+					nIntegers += incrementOrd2
 				} else {
 					nIntegers++
 				}
