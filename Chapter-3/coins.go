@@ -46,7 +46,7 @@ func makeIntegers(array []int) int {
 	for index := range array {
 		if index == 0 {
 			nIntegers++
-		} else if index < len(array)-1 {
+		} else if index < len(array) - 1 {
 			indexDx = index + 1
 			for j := indexSx; j < indexDx; j++ {
 				if array[j] != array[j + 1] {
