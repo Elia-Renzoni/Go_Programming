@@ -49,7 +49,7 @@ func makeIntegers(array []int) int {
 		} else if index < len(array)-1 {
 			indexDx = index + 1
 			for j := indexSx; j < indexDx; j++ {
-				if array[j] != array[j+1] {
+				if array[j] != array[j + 1] {
 					nIntegers += 2
 				} else {
 					nIntegers++
