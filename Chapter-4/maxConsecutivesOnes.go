@@ -12,7 +12,7 @@ const arrElem = 12
 
 func main() {
 	var binaryArr []int = createArray()
-	nConsecutives := func() int {
+	nConsecutives := func() int {			// closures function
 		var values int
 		for _, value := range binaryArr {
 			if value == 1 {
