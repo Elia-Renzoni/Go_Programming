@@ -51,12 +51,12 @@ func grumpyBookStoreOwner(clients []int, grumpy []int, minutes int) (sutisfactio
 	var clientSutified int
 	for i := 0; i < arrElem; i++ {
 		if grumpy[i] == 0 || arrElem-i == minutes {
-			clientSutified += clients[i]
 			if arrElem-i == minutes {
 				for j := arrElem - i; j < arrElem; j++ {
 					clientSutified += clients[j]
 				}
 			}
+			clientSutified += clients[i]
 		}
 	}
 	return
