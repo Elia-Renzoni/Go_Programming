@@ -38,11 +38,15 @@ func createArrayClients() (array []int) {
 func createArrayGrumpy() (array []int) {
 	var (
 		emptyArray [arrElem]int
-		value      int = 0
+		value      int
 	)
 	for index := range emptyArray {
 		emptyArray[index] = value
-		value++
+		if value == 0 {
+			value = 1
+		} else {
+			value = 0
+		}
 	}
 	return
 }
