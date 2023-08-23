@@ -17,11 +17,12 @@ const (
 
 func main() {
 	var (
-		createArray = func() int[] {
+		createArray = func() (array []int) {
 			var newArray[maxSize] int
 			for index := range newArray {
 				newArray[index] = rand.Intn(20)
 			}
+			return
 		}
 		kValue = func() int {
 			return rand.Intn(20)
