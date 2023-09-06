@@ -10,8 +10,8 @@ package main
 import (
 	"errors"
 	"fmt"
-	"os"
 	"math/rand"
+	"os"
 	"time"
 )
 
@@ -20,11 +20,15 @@ const (
 )
 
 func main() {
-	if firstArray []int, err  := createFirstArray(); err != nil {
+	var (
+		firstArray, secondArray []int
+		err, error1             error
+	)
+	if firstArray, err = createFirstArray(); err != nil {
 		fmt.Printf("Errore durante l'esecuzione ! :", err)
 		os.Exit(1)
 	}
-	if secondArray []int, error1 := createSecondArray(firstArray); error1 != nil {
+	if secondArray, error1 = createSecondArray(firstArray); error1 != nil {
 		fmt.Printf("Errore durante l'esecuzione ! : ", error1)
 		os.Exit(1)
 	}
@@ -33,14 +37,14 @@ func main() {
 			fmt.Printf("Value : %d \n", value)
 		}
 	}
-	visitConcatArray(secondArray) 
+	visitConcatArray(secondArray)
 }
 
 func createFirstArray() ([]int, error) {
-	var supportArray int[firstArrayNumsElement]
+	var supportArray [firstArrayNumsElement]int
 	rand.Seed(time.Now())
 	for index := range supportArray {
-		supportArray[index] = rand.Intn() 
+		supportArray[index] = rand.Intn()
 	}
 	if check := isEmpty(supportArray); check == true {
 		return nil, errors.New("Impossibile creare il primo array !")
@@ -50,8 +54,8 @@ func createFirstArray() ([]int, error) {
 
 func createSecondArray(firstArray []int) ([]int, error) {
 	var (
-		supportArray int[secondArrayNumsElement]
-		j int
+		supportArray [secondArrayNumsElement]int
+		j            int
 	)
 
 	for index := range supportArray {
@@ -71,7 +75,7 @@ func createSecondArray(firstArray []int) ([]int, error) {
 func isEmpty(arrayToCheck []int) bool {
 	var (
 		control int
-		result bool
+		result  bool
 	)
 	for value := range arrayToCheck {
 		if value == 0 {
@@ -83,6 +87,5 @@ func isEmpty(arrayToCheck []int) bool {
 	} else {
 		result = false
 	}
-	return result 
+	return result
 }
-
