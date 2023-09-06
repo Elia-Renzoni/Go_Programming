@@ -17,6 +17,7 @@ import (
 
 const (
 	firstArrayNumsElement, secondArrayNumsElement int = 12, 12 * 2
+	maxValue                                      int = 50
 )
 
 func main() {
@@ -42,9 +43,9 @@ func main() {
 
 func createFirstArray() ([]int, error) {
 	var supportArray [firstArrayNumsElement]int
-	rand.Seed(time.Now())
+	rand.Seed(time.Now().Local().Unix())
 	for index := range supportArray {
-		supportArray[index] = rand.Intn()
+		supportArray[index] = rand.Intn(maxValue)
 	}
 	if check := isEmpty(supportArray); check == true {
 		return nil, errors.New("Impossibile creare il primo array !")
@@ -60,9 +61,9 @@ func createSecondArray(firstArray []int) ([]int, error) {
 
 	for index := range supportArray {
 		if index <= firstArrayNumsElement {
-			supportArray[i] = firstArray[i]
+			supportArray[index] = firstArray[index]
 		} else {
-			supportArray[i] = firstArray[j]
+			supportArray[index] = firstArray[j]
 			j++
 		}
 	}
