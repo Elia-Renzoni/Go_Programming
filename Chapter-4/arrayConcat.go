@@ -78,7 +78,7 @@ func isEmpty(arrayToCheck []int) bool {
 		control int
 		result  bool
 	)
-	for value := range arrayToCheck {
+	for _, value := range arrayToCheck {
 		if value == 0 {
 			control++
 		}
