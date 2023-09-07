@@ -1,9 +1,3 @@
-/**
-*
-*	@author Elia Renzoni
-*	@date 07/09/2023
-*	@brief defer call. Go function ex.
-***/
 
 package main
 
@@ -12,7 +6,6 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
-	"time"
 )
 
 const (
@@ -37,7 +30,6 @@ func createArray() ([]int, error) {
 		suppArray      [maxValue]int
 		controlCounter int
 	)
-	rand.Seed(time.Now().Unix())
 	for index := range suppArray {
 		suppArray[index] = rand.Intn(maxRand)
 	}
@@ -46,7 +38,7 @@ func createArray() ([]int, error) {
 			controlCounter++
 		}
 	}
-	if controlCounter != len(suppArray) {
+	if controlCounter == len(suppArray) {
 		return nil, errors.New("Errore nella generazione dell'Array !")
 	}
 	return suppArray[:], nil
