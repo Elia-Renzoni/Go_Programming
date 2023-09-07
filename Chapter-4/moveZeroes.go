@@ -49,7 +49,7 @@ func moveZeroes(values []int) {
 		repeat  int = 0
 		support int
 	)
-	defer visitArray(values)
+	defer visitArray(values)		// defer call 
 
 	for repeat != len(values) {
 		for index := range values {
