@@ -8,9 +8,9 @@ package main
 
 import (
 	"fmt"
-	_"math/rand"
-	_"time"
+	_ "math/rand"
 	"os"
+	_ "time"
 )
 
 type numbers [10]int
@@ -20,7 +20,7 @@ const movePattern int = 3
 func main() {
 	var (
 		nums *numbers = new(numbers)
-		err := initArray(nums)
+		err           = initArray(nums)
 	)
 	if err != nil {
 		fmt.Printf("Errore!")
@@ -31,12 +31,16 @@ func main() {
 }
 
 func initArray(nums *numbers) error {
-	var control bool = true
+	var (
+		control bool = true
+		err     error
+		numbers int
+	)
 	for index := range nums {
 		for control {
 			fmt.Printf("Inserisci un numero \n")
-			numbers, err := fmt.Scanf("%d", nums[index])
-			if number != 1 || nums[index] <= 0 {
+			numbers, err = fmt.Scanf("%d", nums[index])
+			if numbers != 1 || nums[index] <= 0 {
 				control = true
 			} else {
 				control = false
@@ -45,15 +49,15 @@ func initArray(nums *numbers) error {
 	}
 	if err != nil {
 		return err
-	} 
+	}
 	return nil
 }
 
 func selectSort(nums *numbers) {
 	var (
-		minValue, indexMinValue int 
+		minValue, indexMinValue int
 	)
-	for i := 0; i < len(nums) - 1; i++ {
+	for i := 0; i < len(nums)-1; i++ {
 		minValue = nums[i]
 		indexMinValue = i
 		for j := i + 1; j < len(nums); j++ {
@@ -72,9 +76,9 @@ func selectSort(nums *numbers) {
 func findMinProd(nums *numbers) int {
 	var (
 		maxMinP int
-		sum int
+		sum     int
 	)
-	for i := len(nums); i >= len(nums) - movePattern; i-- {
+	for i := len(nums); i >= len(nums)-movePattern; i-- {
 		sum += nums[i]
 	}
 	return maxMinP * sum
