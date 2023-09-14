@@ -11,7 +11,7 @@
 
  func main() {
  	var (
- 		arrNumbers []int = []int {0, 1, 7, 4, 4, 5}
+ 		arrNumbers [6]int = [6]int {0, 1, 7, 4, 4, 5}
  		lower, upper int = 3, 6
  		rightCouples int 
  	)
