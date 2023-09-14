@@ -52,15 +52,15 @@ func createArrayGrumpy() (array []int) {
 }
 
 func grumpyBookStoreOwner(clients []int, grumpy []int, minutes int) (sutisfaction int) {
-	var clientSutified int
+	var sutisfaction int
 	for i := 0; i < arrElem; i++ {
 		if grumpy[i] == 0 || arrElem-i == minutes {
 			if arrElem-i == minutes {
 				for j := arrElem - i; j < arrElem; j++ {
-					clientSutified += clients[j]
+					sutisfaction += clients[j]
 				}
 			}
-			clientSutified += clients[i]
+			sutisfaction += clients[i]
 		}
 	}
 	return
