@@ -15,8 +15,8 @@ import (
 const infLimit byte = 0
 
 func main() {
-	firstArr := []int{1, 2, 3, 2, 1}
-	secondArr := []int{3, 2, 1, 4, 7}
+	firstArr := [5]int{1, 2, 3, 2, 1}
+	secondArr := [5]int{3, 2, 1, 4, 7}
 	if maxSub := findMaxSubArray(firstArr, secondArr); maxSub < infLimit {
 		fmt.Printf("No subarray")
 	} else {
