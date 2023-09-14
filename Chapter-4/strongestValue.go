@@ -17,18 +17,17 @@ const (
 
 func main() {
 	var (
-		arrValue    []int = createArr()
+		arrValue [arrElements]int
 		medianValue int   = func() int {
 			return (arrElements - 1) / 2
 		}()
-		strongestValues []int       = getStrongest(arrValue, medianValue)
+		strongestValues [maxStrongestValues]int       = getStrongest(arrValue, medianValue)
 		arrayVisit      func([]int) = visitStrongestValues
 	)
 	arrayVisit(strongestValues)
 }
 
-func createArr() (array []int) {
-	var suppArray [arrElements]int
+func createArr(arrValue []int) {
 	value := 0
 	for index := range suppArray {
 		value += incrementOrder
@@ -37,15 +36,14 @@ func createArr() (array []int) {
 	return
 }
 
-func getStrongest(values []int, median int) (array []int) {
-	var strongestElments [maxStrongestValues]int
+func getStrongest(values []int, median int) (array [maxStrongestValues]int) {
 	counter := 0
 	for index := range values {
 		for j := range values {
 			if (values[index] - values[median]) >= (values[j] - values[median]) {
 				counter++
 				if counter <= maxStrongestValues {
-					strongestElments[index] = values[index]
+					array[index] = values[index]
 				}
 			}
 		}
