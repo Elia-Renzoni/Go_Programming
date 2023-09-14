@@ -15,7 +15,7 @@ const (
 
 func main() {
 	var (
-		moneyHouse []int16 = []int16 {12, 3, 4, 5, 7}
+		moneyHouse [5]int16 = [5]int16 {12, 3, 4, 5, 7}
 		spoils     int16
 	)
 	if rob(moneyHouse, &spoils); spoils != noSpoils {
