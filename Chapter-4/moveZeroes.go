@@ -1,11 +1,14 @@
+/**
+*
+*	@author Elia Renzoni
+*	@date 07/09/2023
+*	@brief defer call. Go function ex.
+***/
 
 package main
 
 import (
-	"errors"
 	"fmt"
-	"math/rand"
-	"os"
 )
 
 const (
@@ -14,42 +17,17 @@ const (
 
 func main() {
 	var (
-		values []int
-		err    error
+		values [maxValue]int = [maxValue]int{23, 2, 1, 4, 11, 89}
 	)
-	if values, err = createArray(); err != nil {
-		fmt.Printf("Errore ! Impossibile creare l'array ")
-		os.Exit(1)
-	} else {
-		moveZeroes(values)
-	}
+	moveZeroes(values)
 }
 
-func createArray() ([]int, error) {
-	var (
-		suppArray      [maxValue]int
-		controlCounter int
-	)
-	for index := range suppArray {
-		suppArray[index] = rand.Intn(maxRand)
-	}
-	for _, value := range suppArray {
-		if value == zeroValue {
-			controlCounter++
-		}
-	}
-	if controlCounter == len(suppArray) {
-		return nil, errors.New("Errore nella generazione dell'Array !")
-	}
-	return suppArray[:], nil
-}
-
-func moveZeroes(values []int) {
+func moveZeroes(values [maxValue]int) {
 	var (
 		repeat  int = 0
 		support int
 	)
-	defer visitArray(values)		// defer call 
+	defer visitArray(values)
 
 	for repeat != len(values) {
 		for index := range values {
@@ -65,7 +43,7 @@ func moveZeroes(values []int) {
 	}
 }
 
-func visitArray(values []int) {
+func visitArray(values [maxValue]int) {
 	for index := range values {
 		fmt.Printf("Value : %d\n", values[index])
 	}
