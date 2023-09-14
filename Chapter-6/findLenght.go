@@ -24,7 +24,7 @@ func main() {
 	}
 }
 
-func findMaxSubArray(nums1 []int, nums2 []int) (maxSub byte) {
+func findMaxSubArray(nums1 [5]int, nums2 [5]int) (maxSub byte) {
 	for i := range nums1 {
 		for j := range nums2 {
 			if nums1[i] == nums2[j] {
