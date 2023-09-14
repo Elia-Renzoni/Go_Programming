@@ -19,7 +19,7 @@ func main() {
 	}
 }
 
-func checkMakeSumDivbyP(array []int, div int, isDiv* int8) {
+func checkMakeSumDivbyP(array [6]int, div int, isDiv* int8) {
 	var sum int 
 	for index := range array {
 		sum += array[index]
