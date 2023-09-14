@@ -25,7 +25,7 @@ func main() {
 	}
 }
 
-func rob(moneyHouse []int16, spoils *int16) {
+func rob(moneyHouse [5]int16, spoils *int16) {
 	i := 0
 	for i <= len(moneyHouse)-2 {
 		*spoils += moneyHouse[i]
