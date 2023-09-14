@@ -12,7 +12,7 @@
  const correctLenght = 5
 
  func main() {
- 	var arrPoint []int16 = []int16 {1, 2, 3, 4, 1}
+ 	var arrPoint [5]int16 = [5]int16 {1, 2, 3, 4, 1}
  	var isCrossing bool
  	checkCross(arrPoint, &isCrossing)
  	if isCrossing {
@@ -22,7 +22,7 @@
  	}
  }
 
- func checkCross(points []int16, isCross* bool) {
+ func checkCross(points [5]int16, isCross* bool) {
  	*isCross := false
  	for index := range points {
  		if len(points) >= correctLenght {
