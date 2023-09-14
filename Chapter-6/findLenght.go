@@ -25,21 +25,20 @@ func main() {
 }
 
 func findMaxSubArray(nums1 []int, nums2 []int) (maxSub byte) {
-	var maxSeq byte
 	for i := range nums1 {
 		for j := range nums2 {
 			if nums1[i] == nums2[j] {
 				if i == 0 && j == 0 {
 					if nums2[j+1] == nums1[i+1] {
-						maxSeq++
+						maxSub++
 					}
 				} else if i == len(nums1) && j == len(nums2) {
 					if nums2[j-1] == nums1[i-1] {
-						maxSeq++
+						maxSub++
 					}
 				} else {
 					if nums2[j-1] == nums1[i-1] || nums2[j+1] == nums1[i+1] {
-						maxSeq++
+						maxSub++
 					}
 				}
 			}
