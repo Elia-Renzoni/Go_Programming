@@ -10,7 +10,7 @@
 
  func main() {
  	var (
- 		array []int = []int {1, 2, 3, 6, 2, 3, 4, 7, 8}
+ 		array [9]int = [9]int {1, 2, 3, 6, 2, 3, 4, 7, 8}
  		groupSize int = 3
  		isDiv bool
  	)
