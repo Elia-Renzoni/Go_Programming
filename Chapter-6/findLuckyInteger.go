@@ -26,8 +26,7 @@ func main() {
 	}
 }
 
-func findLucky(nums *arrNumbers) (nLuckyInt int) {
-	var lucky int
+func findLucky(nums *arrNumbers) (lucky int) {
 	for _, value := range nums {
 		for j := range nums {
 			if value == nums[j] {
