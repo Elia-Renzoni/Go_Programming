@@ -22,14 +22,15 @@ const (
 
 func main() {
 	var (
-		firstArray, secondArray []int
-		err, error1             error
+		firstArray  [firstArrayNumsElement]int
+		secondArray [secondArrayNumsElement]int
+		err, error1 error
 	)
-	if firstArray, err = createFirstArray(); err != nil {
+	if err = createFirstArray(firstArray); err != nil {
 		fmt.Printf("Errore durante l'esecuzione ! :", err)
 		os.Exit(1)
 	}
-	if secondArray, error1 = createSecondArray(firstArray); error1 != nil {
+	if error1 = createSecondArray(secondArray, firstArray); error1 != nil {
 		fmt.Printf("Errore durante l'esecuzione ! : ", error1)
 		os.Exit(1)
 	}
@@ -41,36 +42,31 @@ func main() {
 	visitConcatArray(secondArray)
 }
 
-func createFirstArray() ([]int, error) {
-	var supportArray [firstArrayNumsElement]int
+func createFirstArray(array [firstArrayNumsElement]int) error {
 	rand.Seed(time.Now().Local().Unix())
-	for index := range supportArray {
-		supportArray[index] = rand.Intn(maxValue)
+	for index := range array {
+		array[index] = rand.Intn(maxValue)
 	}
-	if check := isEmpty(supportArray); check == true {
-		return nil, errors.New("Impossibile creare il primo array !")
+	if check := isEmpty(array); check == true {
+		return errors.New("Impossibile creare il primo array !")
 	}
-	return supportArray[:], nil
+	return nil
 }
 
-func createSecondArray(firstArray []int) ([]int, error) {
-	var (
-		supportArray [secondArrayNumsElement]int
-		j            int
-	)
-
-	for index := range supportArray {
+func createSecondArray(secondArray [secondArrayNumsElement]int, firstArray [firstArrayNumsElement]int) error {
+	var j int
+	for index := range secondArray {
 		if index <= firstArrayNumsElement {
-			supportArray[index] = firstArray[index]
+			secondArray[index] = firstArray[index]
 		} else {
-			supportArray[index] = firstArray[j]
+			secondArray[index] = firstArray[j]
 			j++
 		}
 	}
-	if check := isEmpty(supportArray); check == true {
-		return nil, errors.New("Impossibile creare il secondo array !")
+	if check := isEmpty(secondArray); check == true {
+		return errors.New("Impossibile creare il secondo array !")
 	}
-	return supportArray[:], nil
+	return nil
 }
 
 func isEmpty(arrayToCheck []int) bool {
