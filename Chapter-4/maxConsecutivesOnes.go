@@ -29,7 +29,7 @@ func main() {
 	}
 }
 
-func createArray() (newArray []int) {
+func createArray() (newArray [arrElem]int) {
 	var (
 		array [arrElem]int
 		value int = 0
