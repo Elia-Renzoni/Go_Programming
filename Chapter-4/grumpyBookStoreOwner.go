@@ -52,7 +52,6 @@ func createArrayGrumpy() (array []int) {
 }
 
 func grumpyBookStoreOwner(clients []int, grumpy []int, minutes int) (sutisfaction int) {
-	var sutisfaction int
 	for i := 0; i < arrElem; i++ {
 		if grumpy[i] == 0 || arrElem-i == minutes {
 			if arrElem-i == minutes {
