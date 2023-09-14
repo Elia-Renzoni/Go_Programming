@@ -21,7 +21,7 @@
  	}
  }
 
- func checkPokerHands(array []int, groupSize int, isDiv* bool) {
+ func checkPokerHands(array [9]int, groupSize int, isDiv* bool) {
  	if (len(array) % groupSize) == 0 {
         if div := len(array) / groupSize; (div * groupSize) == len(array) {
             if isOrd := checkOrd(array); isOrd {
@@ -34,7 +34,7 @@
  }
 
 // bubblesort and check
-func checkOrd(array []int) bool {
+func checkOrd(array [9]int) bool {
     var ( 
         tmp, i, j int
         result bool 
