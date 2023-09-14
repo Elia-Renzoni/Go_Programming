@@ -7,27 +7,22 @@
 
 package main
 
-import "fmt"
-import "math/rand"
+import (
+	"fmt"
+	"math/rand"
+)
 
 const (
 	maxSize = 12
-	minOp = 0
+	minOp   = 0
 )
 
 func main() {
 	var (
-		createArray = func() (array []int) {
-			var newArray[maxSize] int
-			for index := range newArray {
-				newArray[index] = rand.Intn(20)
-			}
-			return
-		}
 		kValue = func() int {
 			return rand.Intn(20)
-		} ()
-		numsArr = createArray()
+		}()
+		numsArr [maxSize]int = [maxSize]int{12, 3, 4, 5, 89, 1}
 	)
 	if maxOp := maxOperation(numsArr, kValue); maxOp != minOp {
 		fmt.Printf("Operations : %d", maxOp)
@@ -36,13 +31,13 @@ func main() {
 	}
 }
 
-func maxOperation(nums []int, k int) (operations int) {
+func maxOperation(nums [maxSize]int, k int) (operations int) {
 	for _, value := range nums {
 		for _, sValue := range nums {
-			if value + sValue == k {
-				operation++
+			if value+sValue == k {
+				operations++
 			}
 		}
 	}
-	return 
+	return
 }
