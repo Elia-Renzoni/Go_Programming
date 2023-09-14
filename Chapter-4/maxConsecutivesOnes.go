@@ -11,8 +11,8 @@ import "fmt"
 const arrElem = 12
 
 func main() {
-	var binaryArr []int = createArray()
-	nConsecutives := func() int {			// closures function
+	var binaryArr [arrElem]int = [arrElem]int{1, 44, 6, 2, 78, 9, 12}
+	nConsecutives := func() int {
 		var values int
 		for _, value := range binaryArr {
 			if value == 1 {
@@ -27,20 +27,4 @@ func main() {
 	default:
 		fmt.Printf("N 1 consecutives : %d", nConsecutives)
 	}
-}
-
-func createArray() (newArray [arrElem]int) {
-	var (
-		array [arrElem]int
-		value int = 0
-	)
-	for index := range array {
-		array[index] = value
-		if value == 0 {
-			value = 1
-		} else {
-			value = 0
-		}
-	}
-	return
 }
