@@ -8,7 +8,7 @@ import "fmt"
 const notDiv int8 = -1
 
 func main() {
-	var arrNumbs []int = []int {12, 67, 4, 56, 21, 89}
+	var arrNumbs [6]int = [6]int {12, 67, 4, 56, 21, 89}
 	var targetDiv int = 5
 	var nSubArray int8 = notDiv
 	checkMakeSumDivbyP(arrNumbs, targetDiv, &nSubArray)
