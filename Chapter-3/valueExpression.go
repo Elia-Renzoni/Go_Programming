@@ -10,7 +10,7 @@ const (
 )
 
 func main() {
-	var numberList []int = []int {104, 373, 13, 121, 77, 30751}
+	var numberList [6]int = [6]int {104, 373, 13, 121, 77, 30751}
 	var isMult, isPair, isPrime bool 
 	checkMult(&isMult, numberList)
 	checkIfPair(&isPair, numberList)
@@ -18,7 +18,7 @@ func main() {
 	checkResults(isMult, isPair, isPrime)
 }
 
-func checkMult(isMult* bool, numberList []int) {
+func checkMult(isMult* bool, numberList [6]int) {
 	for index := range numberList {
 		switch {
 		case numberList[index] % multiply1 == 0, 
@@ -31,7 +31,7 @@ func checkMult(isMult* bool, numberList []int) {
 	}
 }
 
-func checkIfPair(isPair* bool, numberList []int) {
+func checkIfPair(isPair* bool, numberList [6]int) {
 	for _, val := range numberList {
 		if val % 2 == 0 {
 			*isPair = true 
@@ -41,7 +41,7 @@ func checkIfPair(isPair* bool, numberList []int) {
 	}
 }
 
-func checkIfPrime(isPrime* bool, numberList []int) {
+func checkIfPrime(isPrime* bool, numberList [6]int) {
 	*isPrime = true
 	for _, value := range numberList {
 		for index := 2; index < value &&  *isPrime != false; index++ {
