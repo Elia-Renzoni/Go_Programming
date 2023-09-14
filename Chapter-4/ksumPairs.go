@@ -37,11 +37,10 @@ func main() {
 }
 
 func maxOperation(nums []int, k int) (operations int) {
-	var ope int
 	for _, value := range nums {
 		for _, sValue := range nums {
 			if value + sValue == k {
-				ope++
+				operation++
 			}
 		}
 	}
