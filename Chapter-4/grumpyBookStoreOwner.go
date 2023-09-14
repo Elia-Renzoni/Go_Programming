@@ -15,43 +15,15 @@ const (
 
 func main() {
 	var (
-		clients                []int                       = createArrayClients()
-		grumpy                 []int                       = createArrayGrumpy()
-		minutes                int                         = 3
-		grumpyBookStoreOwnCopy func([]int, []int, int) int = grumpyBookStoreOwner
+		clients                [arrElem]int                              = [arrElem]int{12, 34, 5, 12, 4, 6, 7}
+		grumpy                 [arrElem]int                              = [arrElem]int{4, 5, 1, 5, 6, 7, 2, 1}
+		minutes                int                                       = 3
+		grumpyBookStoreOwnCopy func([arrElem]int, [arrElem]int, int) int = grumpyBookStoreOwner
 	)
 	fmt.Printf("N Customer Sutisfied %d", grumpyBookStoreOwnCopy(clients, grumpy, minutes))
 }
 
-func createArrayClients() (array []int) {
-	var (
-		emptyArray [arrElem]int
-		value      int
-	)
-	for index := range emptyArray {
-		value += increments
-		emptyArray[index] = value
-	}
-	return
-}
-
-func createArrayGrumpy() (array []int) {
-	var (
-		emptyArray [arrElem]int
-		value      int
-	)
-	for index := range emptyArray {
-		emptyArray[index] = value
-		if value == 0 {
-			value = 1
-		} else {
-			value = 0
-		}
-	}
-	return
-}
-
-func grumpyBookStoreOwner(clients []int, grumpy []int, minutes int) (sutisfaction int) {
+func grumpyBookStoreOwner(clients [arrElem]int, grumpy [arrElem]int, minutes int) (sutisfaction int) {
 	for i := 0; i < arrElem; i++ {
 		if grumpy[i] == 0 || arrElem-i == minutes {
 			if arrElem-i == minutes {
