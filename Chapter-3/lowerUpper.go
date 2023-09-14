@@ -22,7 +22,7 @@
  	}
  }
 
- func countRightCouples(arrNumbers []int, lower, upper int, couples* int) {
+ func countRightCouples(arrNumbers [6]int, lower, upper int, couples* int) {
  	for i := 0; i < len(arrNumbers) - 1; i++ {
  		for j := i + 1; j < len(arrNumbers) - 1; j++ {
  			if sum := arrNumbers[i] + arrNumbers[j]; lower <= sum && sum <= upper {
