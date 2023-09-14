@@ -16,14 +16,16 @@ import (
 )
 
 const (
-	firstArrayNumsElement, secondArrayNumsElement int = 12, 12 * 2
+	arrElem int = 12
 	maxValue                                      int = 50
 )
 
+type arr [arrElem]int
+
 func main() {
 	var (
-		firstArray  [firstArrayNumsElement]int
-		secondArray [secondArrayNumsElement]int
+		firstArray  *arr = new(arr) 
+		secondArray *arr = new(arr)
 		err, error1 error
 	)
 	if err = createFirstArray(firstArray); err != nil {
@@ -42,7 +44,7 @@ func main() {
 	visitConcatArray(secondArray)
 }
 
-func createFirstArray(array [firstArrayNumsElement]int) error {
+func createFirstArray(array *arr) error {
 	rand.Seed(time.Now().Local().Unix())
 	for index := range array {
 		array[index] = rand.Intn(maxValue)
@@ -53,7 +55,7 @@ func createFirstArray(array [firstArrayNumsElement]int) error {
 	return nil
 }
 
-func createSecondArray(secondArray [secondArrayNumsElement]int, firstArray [firstArrayNumsElement]int) error {
+func createSecondArray(secondArray *arr, firstArray *arr) error {
 	var j int
 	for index := range secondArray {
 		if index <= firstArrayNumsElement {
@@ -69,7 +71,7 @@ func createSecondArray(secondArray [secondArrayNumsElement]int, firstArray [firs
 	return nil
 }
 
-func isEmpty(arrayToCheck []int) bool {
+func isEmpty(arrayToCheck *arr) bool {
 	var (
 		control int
 		result  bool
