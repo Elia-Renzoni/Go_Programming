@@ -1,28 +1,26 @@
 /**
- * 
+ *
  * 	@author Elia Renzoni
  * 	@date 07/09/2023
- * 	@brief panic, signaling and Handling error. 
- * 
+ * 	@brief panic, signaling and Handling error.
+ *
  **/
 
-package main 
+package main
 
 import (
 	"fmt"
 	"math"
-	"math/rand"
-	"time"
 )
 
 const (
-	panicMessage string = "Errore nella creazione dell'Array ! funzione createArray"
-	maxElement, maxRandValue int = 12, 100
+	panicMessage             string = "Errore nella creazione dell'Array ! funzione createArray"
+	maxElement, maxRandValue int    = 12, 100
 )
 
 func main() {
 	var (
-		nums []int = createArray()
+		nums           [maxElement]int = [maxElement]int{3, 5, 6, 12, 7, 5}
 		maxPos, maxNeg int
 	)
 	selectSort(nums)
@@ -36,32 +34,11 @@ func main() {
 	}
 }
 
-func createArray() (array []int) {
+func selectSort(nums [maxElement]int) {
 	var (
-		conrtolCounter int
-		suppArray [maxElement]int
+		minValue, indexMinValue, j int
 	)
-	rand.Seed(time.Now().Unix())
-	for index := range suppArray {
-		suppArray[index] = rand.Intn(maxRandValue)
-	}
-	for _, value := range suppArray {
-		if value == 0 {
-			conrtolCounter++
-		}
-	}
-	if conrtolCounter == len(suppArray) {
-		panic(panicMessage)						// panic and crash
-	} 
-	return 
-}
-
-
-func selectSort(nums []int) {
-	var (
-		minValue, indexMinValue, j int 
-	)
-	for i := 0; i < len(nums) - 1; i++ {
+	for i := 0; i < len(nums)-1; i++ {
 		minValue = nums[i]
 		indexMinValue = i
 		for j = i + 1; j < len(nums); j++ {
@@ -77,7 +54,7 @@ func selectSort(nums []int) {
 	}
 }
 
-func maximumCount(pos *int, neg *int, nums []int) {
+func maximumCount(pos *int, neg *int, nums [maxElement]int) {
 	for index := range nums {
 		if math.Signbit(float64(nums[index])) {
 			*neg++
