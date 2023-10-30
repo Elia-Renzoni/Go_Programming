@@ -46,6 +46,7 @@ func initSlice(nums []int) {
 	}
 }
 
+// TODO
 func competitiveSubSequence(nums []int, k int) (result []int) {
 	var (
 		sum          int
