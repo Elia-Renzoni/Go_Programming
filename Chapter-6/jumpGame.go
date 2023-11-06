@@ -58,7 +58,7 @@ func jumpGame(nums []int) (canJumpToEnd bool) {
 		}
 	}
 
-	if index == len(nums)-1 {
+	if index == len(nums) {
 		canJumpToEnd = true
 	} else {
 		canJumpToEnd = false
