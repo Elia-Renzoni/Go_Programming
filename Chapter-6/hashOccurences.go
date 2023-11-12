@@ -72,7 +72,7 @@ func parsingOccurences(sequence string, hashParser map[string]int) {
 	/*
 	* optional compilation, only for debug
 	 */
-	func() {
+	func(){
 		for key, value := range hashParser {
 			fmt.Printf(" Key : %s - Value : %d ", key, value)
 		}
