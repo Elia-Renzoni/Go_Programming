@@ -57,7 +57,7 @@ func initSequence(sequence *string) (somethingWrong error) {
 
 /**
 *	@param sequence of runes
-*	@param Hash Map, <key = rune> <value = rune occur.>
+*	@param Hash Map, <key = rune> <value = rune occurences>
 **/
 func parsingOccurences(sequence string, hashParser map[string]int) {
 	var key int = 1
