@@ -103,10 +103,10 @@ func isSubset(parser map[string]int, values string) bool {
 		for key := range parser {
 			// main logic:
 			// if the key exist
-			// if the key(parser) exist in tmp and occurencies are the same
-			// then result = true
-			// else
-			// thena result = false
+				// if the key(parser) exist in tmp and occurencies are the same
+					// then result = true
+				// else
+					// then result = false
 			//
 		}
 	}()
