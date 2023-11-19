@@ -97,7 +97,6 @@ func parseWords(parser map[string]int, words []string) {
 func isSubset(parser map[string]int, values string) bool {
 	var tmp map[string]int
 	var occurrencies int
-
 	// TODO
 	defer func() {
 		for key := range parser {
@@ -109,7 +108,7 @@ func isSubset(parser map[string]int, values string) bool {
 					// then result = false
 			//
 		}
-	}()
+	} ()
 
 	for _, char := range values {
 		for index := range values {
@@ -119,6 +118,5 @@ func isSubset(parser map[string]int, values string) bool {
 			}
 		}
 	}
-
 	return true
 }
