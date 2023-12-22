@@ -9,16 +9,12 @@ import (
 type Queue struct {
 	keyValue int
 	nextNode *Queue
-}
-
-type QueueImportantElements struct {
-	top    *Queue
-	bottom *Queue
+	tail     *Queue
+	head     *Queue
 }
 
 func main() {
 	var queue *Queue = new(Queue)
-	var utilityMethods *QueueImportantElements = new(QueueImportantElements)
 
 	rand.Seed(time.Now().Unix())
 	queue.addNewElement(rand.Intn(50))
@@ -28,38 +24,36 @@ func main() {
 
 	queue.visit()
 
-	fmt.Println("Bottom : %d - Top : %d", utilityMethods.getBottomOfQueue().keyValue, utilityMethods.getTopOfQueue().keyValue)
+	fmt.Println("Bottom : %d - Top : %d", queue.head.keyValue, queue.tail.keyValue)
 
 }
 
 func (queue *Queue) visit() {
 	var node *Queue
-	var utilityMethods = &QueueImportantElements{}
-	for node = utilityMethods.getBottomOfQueue(); node != nil; node = node.nextNode {
+	for node = queue.head; node != nil; node = node.nextNode {
 		fmt.Println(node.keyValue)
 	}
 }
 
-func (utiliyMethods *QueueImportantElements) getTopOfQueue() *Queue {
-	return utiliyMethods.top
+func (queue *Queue) getTail() *Queue {
+	return queue.tail
 }
 
-func (utilityMethods *QueueImportantElements) getBottomOfQueue() *Queue {
-	return utilityMethods.bottom
+func (queue *Queue) getHead() *Queue {
+	return queue.head
 }
 
 func (queue *Queue) addNewElement(value int) {
 	var (
-		node           *Queue                  = new(Queue)
-		utilityMethods *QueueImportantElements = &QueueImportantElements{}
-		top            *Queue                  = utilityMethods.getTopOfQueue()
+		node *Queue = new(Queue)
+		top  *Queue = queue.getTail()
 	)
 	node.keyValue = value
 	node.nextNode = nil
 	if top != nil {
-		top.nextNode = node
+		queue.tail.nextNode = node
 	} else {
-		utilityMethods.bottom = node
+		queue.head = node
 	}
-	utilityMethods.top = node
+	queue.tail = node
 }
