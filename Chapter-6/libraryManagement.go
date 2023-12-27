@@ -131,7 +131,7 @@ func (book *bookLoaded) addBookLoaned(newBook book) {
 
 func (book *bookLoaded) visitBookLoaned() {
 	for node := book.head; node != nil; node = node.nextNode {
-		fmt.Println(book.bookInfo)
+		fmt.Println("Title : ", node.bookInfo.title+"  - Author : ", node.bookInfo.author)
 	}
 }
 
@@ -147,10 +147,10 @@ func (transation *Transactions) addNewTransation(myUs user, myBook book, date, h
 		transation.head = newNode
 	} else {
 		transation.getLastTransaction().nextTransaction = newNode
-		fmt.Printf("New Trasation Occur ! type %s", newNode.typeOfTransaction)
-		fmt.Printf("Hour and Date : %d %d", newNode.hour, newNode.date)
 	}
 
+	fmt.Printf("New Trasation Occur ! type %s\n", newNode.typeOfTransaction)
+	fmt.Printf("Hour and Date : %d %d", newNode.hour, newNode.date)
 }
 
 func (book *bookLoaded) getLastNode() *bookLoaded {
