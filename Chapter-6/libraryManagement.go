@@ -85,26 +85,38 @@ var book4 = book{
 *	user implementation
  */
 var user1 = user{
-	name:       "Selene",
-	surname:    "Venozni",
-	idNumber:   rand.Intn(50),
-	bookLoaded: nil,
+	name:     "Selene",
+	surname:  "Venozni",
+	idNumber: rand.Intn(50),
 }
 
 var user2 = user{
-	name:       "Matteo",
-	surname:    "Gramellini",
-	idNumber:   rand.Intn(50),
-	bookLoaded: nil,
+	name:     "Matteo",
+	surname:  "Gramellini",
+	idNumber: rand.Intn(50),
 }
 var user3 = user{
-	name:       "Piero",
-	surname:    "Vecchioni",
-	idNumber:   rand.Intn(50),
-	bookLoaded: nil,
+	name:     "Piero",
+	surname:  "Vecchioni",
+	idNumber: rand.Intn(50),
 }
 
 func main() {
+
+	user1.bookLoaded = new(bookLoaded)
+	user2.bookLoaded = new(bookLoaded)
+	user3.bookLoaded = new(bookLoaded)
+
+	user1.bookLoaded.addBookLoaned(book1)
+	user2.bookLoaded.addBookLoaned(book2)
+	user3.bookLoaded.addBookLoaned(book2)
+	user3.bookLoaded.addBookLoaned(book3)
+
+	user3.bookLoaded.visitBookLoaned()
+
+	var transaction *Transactions = new(Transactions)
+
+	transaction.addNewTransation(user1, book3, 23, 2, loan)
 
 }
 
@@ -112,13 +124,11 @@ func (book *bookLoaded) addBookLoaned(newBook book) {
 	var newNode *bookLoaded = new(bookLoaded)
 	newNode.bookInfo = newBook
 
-	if newNode == book.head {
+	if book.previusNode == nil {
 		book.head = newNode
 	} else {
 		book.previusNode.nextNode = newNode
 	}
-
-	book.previusNode = newNode
 }
 
 func (book *bookLoaded) visitBookLoaned() {
