@@ -30,10 +30,9 @@ type user struct {
 }
 
 type bookLoaded struct {
-	bookInfo    book
-	nextNode    *bookLoaded
-	previusNode *bookLoaded
-	head        *bookLoaded
+	bookInfo book
+	nextNode *bookLoaded
+	head     *bookLoaded
 }
 
 type Transactions struct {
@@ -43,7 +42,6 @@ type Transactions struct {
 	typeOfTransaction string
 	nextTransaction   *Transactions
 	head              *Transactions
-	previusNode       *Transactions
 }
 
 /**
@@ -124,10 +122,10 @@ func (book *bookLoaded) addBookLoaned(newBook book) {
 	var newNode *bookLoaded = new(bookLoaded)
 	newNode.bookInfo = newBook
 
-	if book.previusNode == nil {
+	if book.getLastNode() == nil {
 		book.head = newNode
 	} else {
-		book.previusNode.nextNode = newNode
+		book.getLastNode().nextNode = newNode
 	}
 }
 
@@ -145,13 +143,30 @@ func (transation *Transactions) addNewTransation(myUs user, myBook book, date, h
 	newNode.hour = hour
 	newNode.typeOfTransaction = transitionType
 
-	if newNode == transation.head {
+	if transation.getLastTransaction() == nil {
 		transation.head = newNode
 	} else {
-		transation.previusNode = newNode
+		transation.getLastTransaction().nextTransaction = newNode
 		fmt.Printf("New Trasation Occur ! type %s", newNode.typeOfTransaction)
 		fmt.Printf("Hour and Date : %d %d", newNode.hour, newNode.date)
 	}
 
-	transation.previusNode = newNode
+}
+
+func (book *bookLoaded) getLastNode() *bookLoaded {
+	var toReturn *bookLoaded
+	for node := book.head; node != nil; node = node.nextNode {
+		toReturn = node
+	}
+
+	return toReturn
+}
+
+func (transactions *Transactions) getLastTransaction() *Transactions {
+	var toReturn *Transactions
+	for node := transactions.head; node != nil; node = node.nextTransaction {
+		toReturn = node
+	}
+
+	return toReturn
 }
