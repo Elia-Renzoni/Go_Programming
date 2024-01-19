@@ -41,7 +41,7 @@ func main() {
 
 func getSongInfo() (title string, author string, duration int) {
 	var (
-		control bool
+		control bool = true
 		err     error
 	)
 	for control {
@@ -61,7 +61,7 @@ func getSongInfo() (title string, author string, duration int) {
 
 func getPlayListName() (name string) {
 	var err error
-	var control bool
+	var control bool = true
 	for control {
 		fmt.Printf("Ïnserisci il nome della playlist")
 		_, err = fmt.Scanf("%s", &name)
