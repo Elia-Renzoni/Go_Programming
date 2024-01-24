@@ -19,10 +19,10 @@ const MAX_VALUE int = 5
 func setNewRestaurantName() (name string) {
 	var control bool = true
 	for control {
-		fmt.Printf("Inserisci un nome di un ristorante : ")
-		_, err := fmt.Scanf("%s", &name)
+		fmt.Printf("Inserisci un nome di un ristorante : \n")
+		_, err := fmt.Scanf("%s\n", &name)
 		if err != nil {
-			panic("Errore nella funzione SetNewRestaurant")
+			panic(err)
 		} else {
 			control = false
 		}

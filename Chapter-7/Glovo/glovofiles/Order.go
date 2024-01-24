@@ -15,6 +15,8 @@ type Order struct {
 }
 
 // l'ordinazione puó avere massimo 10 richieste
+// aggiunge gli elementi alla ordinazione e
+// calcola il prezzo
 func (o *Order) DishesOrder(order []string) {
 	o.order = make([]string, 10)
 
@@ -28,7 +30,7 @@ func (o *Order) DishesOrder(order []string) {
 		}
 	}()
 
-	for index := range o.order {
-		o.order[index] = order[index] // NOTE : possibile crash del programma
+	for index := range order {
+		o.order = append(o.order, order[index])
 	}
 }

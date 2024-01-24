@@ -15,10 +15,10 @@ type User struct {
 func (u *User) InsertNewName() {
 	var control bool = true
 	for control {
-		fmt.Printf("Inserisci un nuovo nome : ")
-		_, err := fmt.Scanf("%s", &u.name)
+		fmt.Printf("Inserisci un nuovo nome : \n")
+		_, err := fmt.Scanf("%s\n", &u.name)
 		if err != nil {
-			panic("Errore nella funzione InsertNewName")
+			panic(err)
 		} else {
 			control = false
 		}
@@ -28,16 +28,16 @@ func (u *User) InsertNewName() {
 func (u *User) InsertNewAddress() {
 	var control bool = true
 	for control {
-		fmt.Printf("Inserisci un nuovo indirizzo : ")
-		_, err := fmt.Scanf("%d", &u.address)
+		fmt.Printf("Inserisci un nuovo indirizzo : \n")
+		_, err := fmt.Scanf("%s\n", &u.address)
 		if err != nil {
-			panic("Errore nella funzione InsertNewAddress")
+			panic(err)
 		} else {
 			control = false
 		}
 	}
 }
 
-func (u *User) getUserNameAndAddress() (string, string) {
+func (u User) getUserNameAndAddress() (string, string) {
 	return u.name, u.address
 }

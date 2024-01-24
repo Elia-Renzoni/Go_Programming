@@ -7,6 +7,8 @@
 
 package glovofiles
 
+import "fmt"
+
 type GlovoSystem struct {
 	user      User
 	order     Order
@@ -14,21 +16,29 @@ type GlovoSystem struct {
 	head      *GlovoSystem
 }
 
-func (g *GlovoSystem) AddOrderToStackOrders(user User, order Order) {
+func (g *GlovoSystem) AddOrderToStackOrders(user *User, order *Order) {
 	var node *GlovoSystem = new(GlovoSystem)
-	node.user = user
-	node.order = order
+	node.user = *user
+	node.order = *order
 
-	if g.head == node {
+	if g.head == nil {
 		g.head = node
 	} else {
-		g.head.nextOrder = node
+		node.nextOrder = g.head
 		g.head = node
 	}
 }
 
-func (g *GlovoSystem) ViewAllOrders() {
+func (g GlovoSystem) ViewAllOrders() {
 	for node := g.head; node != nil; node = node.nextOrder {
-		// TODO
+		func() {
+			for _, value := range node.order.order {
+				fmt.Printf("%s\t", value)
+			}
+		}()
+		fmt.Printf("Price : %d\n", node.order.price)
+		fmt.Printf("User name : %s\n", node.user.name)
+		fmt.Printf("Restaurant Name : %s\n", node.order.Restaurant.name)
+		fmt.Printf("User address : %s\n", node.user.address)
 	}
 }
