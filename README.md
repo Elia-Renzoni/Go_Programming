@@ -11,6 +11,5 @@
 6) Composite Types
 7) Methods, Interfances, and Objects
 8) Concurrency
-9) Data I/O Go
-10) Network Services in Go
-11) Testing Programs
+9) Network Services in Go
+10) Testing Programs
